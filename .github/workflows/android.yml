@@ -44,7 +44,10 @@ jobs:
 
       - name: Copy native clients to staging
         run: cp -r target/client/aarch64-android/gvm/*.apk staging
-
+        
+      - name: Copy native manifest to staging
+        run: cp target/client/aarch64-android/gensrc/android/AndroidManifest.xml staging
+        
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
